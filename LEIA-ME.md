@@ -7,3 +7,7 @@ Site publicado em https://guimmagarage.netlify.app (Netlify).
 - `img/`: logos e fotos.
 
 Itens marcados `exemplo: true` ficam escondidos no site publicado.
+
+## Como publicar
+
+Este repositório é público e está ligado ao Netlify (projeto `guimmagarage`). Cada merge na branch `main` publica o site sozinho em cerca de 1 minuto.
