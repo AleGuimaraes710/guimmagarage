@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O que eu uso · Discount Hunter</title>
+<meta name="description" content="Grupos grátis de ofertas no WhatsApp, escolhidas a dedo: Moto & Trilha, Impressão 3D, Café e Vinhos.">
+<link rel="icon" href="img/favicon.png">
+<meta property="og:title" content="Discount Hunter · O melhor preço na mira">
+<meta property="og:description" content="Grupos grátis de ofertas no WhatsApp, escolhidas a dedo por nicho.">
+<meta property="og:image" content="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6E5;--txt:#1a1a1a;--mute:#5b5348;--line:#1a1a1a;--laranja:#FF6A13;--amarelo:#FFD21F;--verde:#1FA855}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:"Archivo",system-ui,sans-serif;line-height:1.45}
+main{max-width:480px;margin:0 auto;padding:24px 16px 40px}
+header{text-align:center;margin-bottom:18px}
+header img{width:min(290px,82%);height:auto}
+header h1{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;line-height:1.05;margin-top:16px}
+header h1 em{font-style:normal;background:var(--amarelo);padding:0 6px;display:inline-block;transform:rotate(-1.5deg);margin-top:4px}
+header p{color:var(--mute);font-size:15px;margin-top:14px}
+h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:18px;text-transform:uppercase;margin:28px 0 6px;padding-bottom:6px;border-bottom:3px solid var(--txt)}
+.pedido{background:var(--amarelo);border:3px solid var(--txt);padding:16px;margin:0 0 18px;text-align:center}
+.pedido strong{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:19px;text-transform:uppercase;display:block;line-height:1.1}
+.pedido p{font-size:14px;margin:8px 0 12px}
+.pedido a{display:inline-block;background:var(--txt);color:#fff;font-weight:800;padding:11px 20px;text-decoration:none;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.passos{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.passos li{font-size:12px;color:var(--mute);line-height:1.3}
+.passos b{display:block;font-family:"Archivo Black",sans-serif;font-weight:400;font-size:34px;color:var(--laranja);line-height:1}
+.passos strong{display:block;color:var(--txt);font-size:14px;text-transform:uppercase;margin:2px 0 3px}
+.grupo{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:2px dashed #c9bda9;text-decoration:none;color:inherit}
+.grupo img{width:54px;height:54px;flex:none}
+.grupo .t{flex:1;min-width:0}
+.grupo b{display:block;font-size:18px;font-weight:800}
+.grupo small{color:var(--mute);font-size:13px}
+.grupo .btn{flex:none;background:var(--verde);color:#fff;font-weight:800;font-size:13px;padding:9px 12px;text-transform:uppercase}
+.grupo .btn::after{content:" →"}
+.grupo.breve{opacity:.5;pointer-events:none}
+.grupo.breve .btn{background:transparent;color:var(--mute);border:2px solid var(--mute)}
+.grupo.breve .btn::after{content:""}
+.selo18{display:inline-block;background:#B5284F;color:#fff;font-size:11px;font-weight:800;padding:1px 5px;margin-left:6px;vertical-align:3px}
+.aviso18{display:none;border:2px solid #B5284F;background:#fff;padding:14px;margin:10px 0;font-size:14px}
+.aviso18.aberto{display:block}
+.aviso18 .linha{display:flex;gap:10px;margin-top:12px}
+.aviso18 a,.aviso18 button{flex:1;text-align:center;padding:10px;font-weight:800;font-size:14px;border:0;cursor:pointer;text-decoration:none;font-family:inherit}
+.aviso18 a{background:var(--verde);color:#fff}
+.aviso18 button{background:#e8dfcf;color:var(--txt)}
+.oferta{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--txt);padding:10px;margin-top:12px;text-decoration:none;color:inherit;position:relative}
+.oferta img{width:74px;height:74px;object-fit:contain;flex:none;background:#fff}
+.oferta .t{flex:1;min-width:0}
+.oferta b{display:block;font-size:15px;line-height:1.25;margin:2px 0 6px}
+.oferta .loja{color:var(--mute);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.oferta .de{color:var(--mute);text-decoration:line-through;font-size:13px;margin-right:6px}
+.oferta .por{font-family:"Archivo Black",sans-serif;font-size:20px;background:var(--amarelo);padding:0 6px;display:inline-block;transform:rotate(-2deg)}
+.oferta .pct{background:var(--laranja);color:#fff;font-weight:800;font-size:12px;padding:2px 6px;margin-left:8px}
+.oferta.exemplo{opacity:.6;pointer-events:none}
+.oferta.exemplo::after{content:"EXEMPLO";position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;color:var(--laranja)}
+.confia{margin-top:26px;font-size:14px;color:var(--mute);border-top:3px solid var(--txt);padding-top:12px}
+.confia li{list-style:none;padding:4px 0}
+.confia li::before{content:"✓ ";color:var(--verde);font-weight:900}
+footer{text-align:center;color:var(--mute);font-size:12px;margin-top:22px}
+footer a{color:var(--mute)}
+.meus{display:flex;align-items:center;gap:14px;background:var(--txt);color:#fff;text-decoration:none;padding:16px;margin-top:22px;border:3px solid var(--txt);box-shadow:5px 5px 0 var(--laranja)}
+.meus .t{flex:1}
+.meus strong{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:19px;text-transform:uppercase;display:block;line-height:1.1}
+.meus small{color:#cfc8bc;font-size:13px;display:block;margin-top:4px}
+.meus .seta{flex:none;background:var(--amarelo);color:var(--txt);font-weight:900;font-size:22px;width:44px;height:44px;display:grid;place-items:center}
+.voltar{display:inline-block;color:var(--txt);font-weight:800;text-decoration:none;font-size:14px;margin-bottom:14px}
+.topo{display:flex;align-items:center;justify-content:space-between}
+.topo img{width:150px;height:auto}
+.projeto{margin-top:30px}
+.projeto .cap{display:flex;gap:10px;align-items:baseline;justify-content:space-between;border-bottom:3px solid var(--txt);padding-bottom:6px}
+.projeto h2{border:0;margin:0;padding:0}
+.projeto .video{display:inline-block;margin-bottom:4px;font-size:12px;font-weight:800;color:var(--txt);background:var(--amarelo);padding:4px 8px;text-decoration:none;text-transform:uppercase}
+.projeto > p{color:var(--mute);font-size:14px;margin:8px 0 2px}
+.lista{display:flex;align-items:center;gap:12px;background:#fff;border:2px solid var(--txt);padding:14px;margin-top:12px;text-decoration:none;color:inherit}
+.lista span:first-child{flex:1}.lista b{display:block;font-size:17px}.lista small{color:var(--mute);font-size:13px}
+.lista .seta{background:var(--amarelo);font-weight:900;width:34px;height:34px;display:grid;place-items:center}
+.prod{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--txt);padding:10px;margin-top:12px;text-decoration:none;color:inherit;position:relative}
+.prod img{width:74px;height:74px;object-fit:contain;flex:none;background:#fff}
+.prod .t{flex:1;min-width:0}
+.prod .loja{color:var(--mute);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.prod b{display:block;font-size:15px;line-height:1.25;margin:2px 0 4px}
+.prod .nota{font-size:13px;color:var(--mute);font-style:italic}
+.prod .ver{flex:none;background:var(--verde);color:#fff;font-weight:800;font-size:12px;padding:8px 10px;text-transform:uppercase}
+.prod.exemplo{opacity:.6;pointer-events:none}
+.prod.exemplo::after{content:"EXEMPLO";position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;color:var(--laranja)}
+</style>
+</head>
+<body>
+<main>
+  <div class="topo"><a class="voltar" href="index.html" id="voltar">← Voltar</a><img src="img/logo-claro.svg" alt="Discount Hunter"></div>
+  <header style="text-align:left">
+    <h1 id="titulo">Meus<br><em>produtos</em></h1>
+    <p id="sub">O que eu uso de verdade nos meus projetos e vídeos. Toque no produto pra ver na loja.</p>
+  </header>
+
+  <div id="projetos"></div>
+
+  <ul class="confia">
+    <li>Só entra aqui o que eu uso e recomendo.</li>
+    <li>Links de afiliado: você paga o mesmo preço e ajuda o canal.</li>
+  </ul>
+
+  <footer>
+    <p>#publi · Preços podem mudar a qualquer momento.</p>
+    <p style="margin-top:6px"><a href="https://instagram.com/guimmagarage">@guimmagarage</a> · Discount Hunter</p>
+  </footer>
+</main>
+
+<script>
+/* =========================================================
+   ÁREA PRA EDITAR — um bloco por projeto.
+   video: link do vídeo/post (opcional). img: foto do produto (opcional).
+   nota: uma frase sua sobre o produto (opcional).
+   "exemplo: true" = só pra ver o visual. Apague quando colocar o real.
+   ========================================================= */
+const PROJETOS = [
+  { id: "trilha", titulo: "Meus acessórios de trilha", desc: "O equipamento que eu uso na trilha.", video: "",
+    produtos: [
+      { nome: "Bota Leatt 4.5", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_746799-MLB119126971667_102026-O.webp", link: "https://meli.la/1GK1ENN" },
+      { nome: "Óculos 100%", loja: "AliExpress", nota: "", img: "https://ae-pic-a1.aliexpress-media.com/kf/S3d7b3363995045eb9a7340df3d07c6a0N.jpg", link: "https://s.click.aliexpress.com/e/_c3RvBOvT" },
+      { nome: "Camisa Kawasaki personalizada", loja: "Shopee", nota: "", img: "", link: "https://s.shopee.com.br/6fj7lf8JAi" },
+      { nome: "Mini rádio comunicador", loja: "AliExpress", nota: "", img: "img/radio.jpg", link: "https://s.click.aliexpress.com/e/_c2Ro3ozL" },
+      { nome: "Colete de hidratação", loja: "AliExpress", nota: "", img: "https://ae-pic-a1.aliexpress-media.com/kf/S90b74e900ebc4550a116cf424b6af8ff3.jpg", link: "https://s.click.aliexpress.com/e/_c2y6xH37" },
+      { nome: "Bolsa de hidratação", loja: "AliExpress", nota: "", img: "https://ae-pic-a1.aliexpress-media.com/kf/S3000ca0bda774e80a9f13dfea471c137M.jpg", link: "https://s.click.aliexpress.com/e/_c4nxat1R" },
+    ] },
+  { id: "klx450", titulo: "KLX 450", desc: "O que eu coloquei na minha KLX 450.", video: "",
+    produtos: [
+      { nome: "Sensor de temperatura e voltagem digital USB", loja: "AliExpress", nota: "", img: "https://ae-pic-a1.aliexpress-media.com/kf/Sfae58af4175c4d1fb48c79a698ef5143v.jpg", link: "https://s.click.aliexpress.com/e/_c2JAbaXP" },
+      { nome: "Ventoinha turbo de kart", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_742011-MLB87007896815_062025-O.webp", link: "https://meli.la/2rpxdqm" },
+      { nome: "Kit plástico AMX", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_842854-MLB92792177120_092025-O.webp", link: "https://meli.la/19X5Hjd" },
+      { nome: "Protetor de motor", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_970417-MLB93482227905_092025-O.webp", link: "https://meli.la/1P19opR" },
+      { nome: "Protetor das tampas do motor", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_826772-MLB95814484261_102025-O.webp", link: "https://meli.la/1GVyU8E" },
+      { nome: "Óleo de suspensão 2.5W", loja: "Mercado Livre", nota: "", img: "https://http2.mlstatic.com/D_NQ_NP_646056-MLB116272204036_092026-O.webp", link: "https://meli.la/12J8qEw" },
+    ] },
+  { id: "wideband", titulo: "Projeto Wideband", desc: "Todos os itens que usei no projeto.", video: "",
+    produtos: [
+      { nome: "Sonda lambda wideband", loja: "Mercado Livre", nota: "", img: "", link: "", exemplo: true },
+    ] },
+  { id: "3d", titulo: "Impressão 3D", desc: "Filamentos, acessórios e a impressora que eu uso.", video: "",
+    produtos: [
+      { nome: "Filamento PLA 1 kg 1,75 mm", loja: "Shopee", nota: "Imprime liso, sem fiapo.", img: "", link: "", exemplo: true },
+    ] },
+  { id: "crf250", titulo: "CRF 250", desc: "Itens que usei no projeto da CRF 250 do meu irmão.", video: "",
+    produtos: [
+      { nome: "Kit relação (coroa, pinhão e corrente)", loja: "Mercado Livre", nota: "", img: "", link: "", exemplo: true },
+    ] },
+];
+/* ===================== fim da área pra editar ===================== */
+
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+const box = document.getElementById("projetos");
+const id = new URLSearchParams(location.search).get("p");
+const atual = PROJETOS.find(p => p.id === id);
+if (atual) {
+  document.getElementById("titulo").innerHTML = `<em>${esc(atual.titulo)}</em>`;
+  document.getElementById("sub").textContent = atual.desc || "";
+  document.title = atual.titulo + " · Discount Hunter";
+  const video = atual.video ? `<a class="video" href="${esc(atual.video)}" target="_blank" rel="noopener">▶ Ver o vídeo do projeto</a>` : "";
+  const reais = atual.produtos.filter(x => !x.exemplo);
+  const itens = !reais.length ? `<p style="margin-top:18px;font-weight:700">Essa lista ainda está sendo montada. Volta logo!</p>` : reais.map(x => `
+    <a class="prod${x.exemplo ? " exemplo" : ""}" ${x.link ? `href="${esc(x.link)}" target="_blank" rel="noopener sponsored"` : ""}>
+      <img src="${x.img ? esc(x.img) : "img/moto-claro.png"}" alt="" loading="lazy" referrerpolicy="no-referrer">
+      <span class="t"><span class="loja">${esc(x.loja)}</span><b>${esc(x.nome)}</b>${x.nota ? `<span class="nota">"${esc(x.nota)}"</span>` : ""}</span>
+      <span class="ver">Ver</span>
+    </a>`).join("");
+  box.innerHTML = `<section class="projeto">${video}${itens}</section>`;
+} else {
+  box.innerHTML = PROJETOS.map(p => `<a class="lista" href="?p=${esc(p.id)}"><span><b>${esc(p.titulo)}</b><small>${esc(p.desc)}</small></span><span class="seta">→</span></a>`).join("");
+}
+</script>
+</body>
+</html>

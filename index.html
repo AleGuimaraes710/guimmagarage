@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Discount Hunter · Grupos de ofertas</title>
+<meta name="description" content="Grupos grátis de ofertas no WhatsApp, escolhidas a dedo: Moto & Trilha, Impressão 3D, Café e Vinhos.">
+<link rel="icon" href="img/favicon.png">
+<meta property="og:title" content="Discount Hunter · O melhor preço na mira">
+<meta property="og:description" content="Grupos grátis de ofertas no WhatsApp, escolhidas a dedo por nicho.">
+<meta property="og:image" content="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FFF6E5;--txt:#1a1a1a;--mute:#5b5348;--line:#1a1a1a;--laranja:#FF6A13;--amarelo:#FFD21F;--verde:#1FA855}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:"Archivo",system-ui,sans-serif;line-height:1.45}
+main{max-width:480px;margin:0 auto;padding:24px 16px 40px}
+header{text-align:center;margin-bottom:18px}
+header img{width:min(290px,82%);height:auto}
+header h1{font-family:"Archivo Black",sans-serif;font-weight:400;text-transform:uppercase;font-size:30px;line-height:1.05;margin-top:16px}
+header h1 em{font-style:normal;background:var(--amarelo);padding:0 6px;display:inline-block;transform:rotate(-1.5deg);margin-top:4px}
+header p{color:var(--mute);font-size:15px;margin-top:14px}
+h2{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:18px;text-transform:uppercase;margin:28px 0 6px;padding-bottom:6px;border-bottom:3px solid var(--txt)}
+.pedido{background:var(--amarelo);border:3px solid var(--txt);padding:16px;margin:28px 0 0;text-align:center}
+.pedido strong{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:19px;text-transform:uppercase;display:block;line-height:1.1}
+.pedido p{font-size:14px;margin:8px 0 12px}
+.pedido a{display:inline-block;background:var(--txt);color:#fff;font-weight:800;padding:11px 20px;text-decoration:none;text-transform:uppercase;font-size:14px;letter-spacing:.04em}
+.passos{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:8px;text-align:center}
+.passos li{font-size:12px;color:var(--mute);line-height:1.3}
+.passos b{display:block;font-family:"Archivo Black",sans-serif;font-weight:400;font-size:34px;color:var(--laranja);line-height:1}
+.passos strong{display:block;color:var(--txt);font-size:14px;text-transform:uppercase;margin:2px 0 3px}
+.grupo{display:flex;align-items:center;gap:12px;padding:14px 0;border-bottom:2px dashed #c9bda9;text-decoration:none;color:inherit}
+.grupo img{width:54px;height:54px;flex:none}
+.grupo .t{flex:1;min-width:0}
+.grupo b{display:block;font-size:18px;font-weight:800}
+.grupo small{color:var(--mute);font-size:13px}
+.grupo .btn{flex:none;background:var(--verde);color:#fff;font-weight:800;font-size:13px;padding:9px 12px;text-transform:uppercase}
+.grupo .btn::after{content:" →"}
+.grupo.breve{opacity:.5;pointer-events:none}
+.grupo.breve .btn{background:transparent;color:var(--mute);border:2px solid var(--mute)}
+.grupo.breve .btn::after{content:""}
+.selo18{display:inline-block;background:#B5284F;color:#fff;font-size:11px;font-weight:800;padding:1px 5px;margin-left:6px;vertical-align:3px}
+.aviso18{display:none;border:2px solid #B5284F;background:#fff;padding:14px;margin:10px 0;font-size:14px}
+.aviso18.aberto{display:block}
+.aviso18 .linha{display:flex;gap:10px;margin-top:12px}
+.aviso18 a,.aviso18 button{flex:1;text-align:center;padding:10px;font-weight:800;font-size:14px;border:0;cursor:pointer;text-decoration:none;font-family:inherit}
+.aviso18 a{background:var(--verde);color:#fff}
+.aviso18 button{background:#e8dfcf;color:var(--txt)}
+.oferta{display:flex;gap:12px;align-items:center;background:#fff;border:2px solid var(--txt);padding:10px;margin-top:12px;text-decoration:none;color:inherit;position:relative}
+.oferta img{width:74px;height:74px;object-fit:cover;flex:none;background:#fff}
+.oferta .t{flex:1;min-width:0}
+.oferta b{display:block;font-size:15px;line-height:1.25;margin:2px 0 6px}
+.oferta .loja{color:var(--mute);font-size:11px;text-transform:uppercase;letter-spacing:.06em;font-weight:700}
+.oferta .de{color:var(--mute);text-decoration:line-through;font-size:13px;margin-right:6px}
+.oferta .por{font-family:"Archivo Black",sans-serif;font-size:20px;background:var(--amarelo);padding:0 6px;display:inline-block;transform:rotate(-2deg)}
+.oferta .pct{background:var(--laranja);color:#fff;font-weight:800;font-size:12px;padding:2px 6px;margin-left:8px}
+.oferta.exemplo{opacity:.6;pointer-events:none}
+.oferta.exemplo::after{content:"EXEMPLO";position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;color:var(--laranja)}
+.confia{margin-top:26px;font-size:14px;color:var(--mute);border-top:3px solid var(--txt);padding-top:12px}
+.confia li{list-style:none;padding:4px 0}
+.confia li::before{content:"✓ ";color:var(--verde);font-weight:900}
+footer{text-align:center;color:var(--mute);font-size:12px;margin-top:22px}
+footer a{color:var(--mute)}
+.meus-sub{color:var(--mute);font-size:14px;margin:8px 0 12px}
+.meus-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.meus-grid .meus:last-child:nth-child(odd){grid-column:1/-1;min-height:80px}
+.meus{display:flex;flex-direction:column;justify-content:space-between;gap:14px;min-height:112px;background:#fff;color:var(--txt);border:3px solid var(--txt);text-decoration:none;padding:14px;box-shadow:4px 4px 0 var(--laranja)}
+.meus:active{transform:translate(2px,2px);box-shadow:2px 2px 0 var(--laranja)}
+.meus strong{font-family:"Archivo Black",sans-serif;font-weight:400;font-size:16px;text-transform:uppercase;line-height:1.1}
+.meus .seta{align-self:flex-end;background:var(--amarelo);color:var(--txt);font-weight:900;font-size:18px;width:34px;height:34px;display:grid;place-items:center}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <img src="img/logo-claro.svg" alt="Discount Hunter: o melhor preço na mira">
+    <h1>Uma IA caça.<br>A gente confere.<br><em>Você só aproveita.</em></h1>
+    <p>Todo dia nossa inteligência artificial vasculha o Mercado Livre e a Shopee, e a gente compara preços, cupons disponíveis e o histórico de cada produto. Só chega no grupo o que é desconto de verdade.</p>
+  </header>
+
+
+  <h2>Escolha seu grupo grátis</h2>
+  <div id="grupos"></div>
+
+  <h2>Meus produtos</h2>
+  <p class="meus-sub">O que eu uso de verdade nos meus projetos e vídeos.</p>
+  <div class="meus-grid">
+    <a class="meus" href="produtos.html?p=trilha"><strong>Meus acessórios de trilha</strong><span class="seta">→</span></a>
+    <a class="meus" href="produtos.html?p=klx450"><strong>KLX 450</strong><span class="seta">→</span></a>
+    <a class="meus" href="produtos.html?p=wideband"><strong>Projeto Wideband</strong><span class="seta">→</span></a>
+    <a class="meus" href="produtos.html?p=3d"><strong>Impressão 3D</strong><span class="seta">→</span></a>
+    <a class="meus" href="produtos.html?p=crf250"><strong>CRF 250</strong><span class="seta">→</span></a>
+  </div>
+
+  <section class="pedido">
+    <strong>Procurando algo específico? É só pedir.</strong>
+    <p>Manda o nome do produto no direct ou pro admin do grupo. Nossa IA procura o menor preço pra você, e a oferta aparece no grupo.</p>
+    <a href="https://ig.me/m/guimmagarage" target="_blank" rel="noopener">Pedir um produto</a>
+  </section>
+
+  <h2 id="ofertas-titulo">Ofertas especiais</h2>
+  <div id="ofertas"></div>
+
+  <ul class="confia">
+    <li>Grátis. Entra e sai quando quiser.</li>
+    <li>Só os administradores postam. Sem spam.</li>
+    <li>Sem "vagas acabando" nem contador falso. Só oferta boa.</li>
+    <li>Links de afiliado: você paga o mesmo preço e ajuda o projeto.</li>
+  </ul>
+
+  <footer>
+    <p>#publi · Preços podem mudar a qualquer momento.</p>
+    <p style="margin-top:6px"><a href="https://instagram.com/guimmagarage">@guimmagarage</a> · Discount Hunter</p>
+  </footer>
+</main>
+
+<script>
+/* =========================================================
+   ÁREA PRA EDITAR — só mexa aqui embaixo.
+   Grupo sem link aparece como "Em breve".
+   ========================================================= */
+const GRUPOS = [
+  { nome: "Moto & Trilha",        desc: "Pneu, bota, capacete e peça",     cor: "#FF6A13", img: "img/moto-claro.png",
+    link: "https://chat.whatsapp.com/LB4SNs0HYKf1lJR73avmHi" },
+  { nome: "Impressão 3D",         desc: "Filamento, bico, mesa e peça",    cor: "#1E88FF", img: "img/3d-claro.png",
+    link: "https://chat.whatsapp.com/LBTTgW4A2QQHGxIzH0FfBN" },
+  { nome: "Café & Acessórios",    desc: "Café especial, moedor, cafeteira", cor: "#C07A3E", img: "img/cafe-claro.png",
+    link: "https://chat.whatsapp.com/B9UFTGhWtUDALbkuM2QiQL" },
+  { nome: "Vinhos & Acessórios",  desc: "Rótulos, kits e taças",           cor: "#B5284F", img: "img/vinhos-claro.png",
+    link: "https://chat.whatsapp.com/EKwrejwTsy43ZtLXKsM0I5", maior18: true },
+];
+
+/* Ofertas especiais (2 ou 3). "exemplo: true" = só pra ver o visual, não aparece clicável.
+   Troque pelos seus links de afiliado e apague a linha "exemplo". */
+const OFERTAS = [
+  { nome: "Pneu traseiro off-road 110/90-17", loja: "Mercado Livre", de: 389.90, por: 249.90, img: "", link: "", exemplo: true },
+  { nome: "Bota de motocross cano alto",      loja: "Shopee",        de: 899.00, por: 599.00, img: "", link: "", exemplo: true },
+  { nome: "Filamento PLA 1 kg 1,75 mm",       loja: "Shopee",        de: 129.90, por: 79.90,  img: "", link: "", exemplo: true },
+];
+/* ===================== fim da área pra editar ===================== */
+
+const reais = v => v.toLocaleString("pt-BR", { style: "currency", currency: "BRL" });
+const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;" }[c]));
+
+const g = document.getElementById("grupos");
+GRUPOS.forEach((x, i) => {
+  const breve = !x.link;
+  const selo = x.maior18 ? '<span class="selo18">18+</span>' : "";
+  const corpo = `<img src="${x.img}" alt=""><span class="t"><b>${esc(x.nome)}${selo}</b><small>${esc(x.desc)}</small></span><span class="btn">${breve ? "Em breve" : "Entrar"}</span>`;
+  if (x.maior18 && !breve) {
+    g.insertAdjacentHTML("beforeend",
+      `<a class="grupo" href="#" data-18="${i}" style="--cor:${x.cor}">${corpo}</a>
+       <div class="aviso18" id="aviso${i}"><b>Grupo só para maiores de 18 anos.</b><br>Beba com moderação. Venda de bebida alcoólica proibida para menores de 18 anos.
+       <div class="linha"><a href="${esc(x.link)}" target="_blank" rel="noopener">Tenho 18+, entrar</a><button type="button" data-fechar="${i}">Voltar</button></div></div>`);
+  } else {
+    g.insertAdjacentHTML("beforeend",
+      `<a class="grupo${breve ? " breve" : ""}" ${breve ? "" : `href="${esc(x.link)}" target="_blank" rel="noopener"`} style="--cor:${x.cor}">${corpo}</a>`);
+  }
+});
+g.addEventListener("click", e => {
+  const a = e.target.closest("[data-18]");
+  if (a) { e.preventDefault(); document.getElementById("aviso" + a.dataset["18"]).classList.toggle("aberto"); }
+  const f = e.target.closest("[data-fechar]");
+  if (f) document.getElementById("aviso" + f.dataset.fechar).classList.remove("aberto");
+});
+
+const o = document.getElementById("ofertas");
+// Enquanto só tiver exemplo, a seção fica escondida na página publicada.
+if (!OFERTAS.some(x => !x.exemplo)) { o.hidden = true; document.getElementById("ofertas-titulo").hidden = true; }
+OFERTAS.forEach(x => {
+  const pct = Math.round((1 - x.por / x.de) * 100);
+  const foto = x.img ? `<img src="${esc(x.img)}" alt="">` : `<img src="img/moto-claro.png" alt="">`;
+  o.insertAdjacentHTML("beforeend",
+    `<a class="oferta${x.exemplo ? " exemplo" : ""}" ${x.link ? `href="${esc(x.link)}" target="_blank" rel="noopener sponsored"` : ""}>${foto}
+     <span class="t"><span class="loja">${esc(x.loja)}</span><b>${esc(x.nome)}</b>
+     <span class="de">${reais(x.de)}</span><span class="por">${reais(x.por)}</span><span class="pct">-${pct}%</span></span></a>`);
+});
+</script>
+</body>
+</html>
